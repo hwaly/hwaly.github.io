@@ -1,6 +1,11 @@
 ---
-layout: app
-title: hwaly
+layout: default
 ---
 
-안녕!!
+{% include header.html %}
+
+{% for post in site.posts %}
+<a class="post-link" href="{{ post.url }}">{{ post.title }}</a>
+{% endfor %}
+
+{% include footer.html %}

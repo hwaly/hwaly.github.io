@@ -5,8 +5,8 @@
     <title>{% if page.title %}{{ page.title }} - {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
 
     <meta name="author" content="{{ site.author }}">
-    <meta name="description" content="{{ site.description }}">
-    <meta name="keywords" content="{{ site.keywords }}">
+    <meta name="description" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+    <meta name="keywords"  content="{% if page.tags.size > 0 %}{% for tag in page.tags  %}{{ tag }}{% if forloop.last == false %}, {% endif %}{% endfor %}{% else %}{{ site.keywords }}{% endif %}">
 
     <meta name="format-detection" content="telephone=no">
     <meta name="format-detection" content="address=no">
@@ -20,4 +20,6 @@
     <meta property="og:locale" content="ko_KR">
 
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <!--<link rel="stylesheet" href="{{ "/assets/css/github-markdown.css" | prepend: site.baseurl }}">-->
+    <link rel="stylesheet" href="{{ "assets/css/github-markdown.css" | prepend: site.baseurl }}">
 </head>
