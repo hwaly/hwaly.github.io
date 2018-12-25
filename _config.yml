@@ -3,7 +3,7 @@ title: "Hwaly's Blog"
 description: "화리 블로그입니다."
 keywords: "화리, hwaly, frontend, javascript, html, css"
 url: "https://hwaly.github.io"
-baseurl: "/"
+baseurl: ""
 github_username: "hwaly"
 
 author: "Byeonghwa Yeon"
