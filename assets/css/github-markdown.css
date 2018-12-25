@@ -636,7 +636,8 @@
     overflow: auto;
     font-size: 85%;
     line-height: 1.45;
-    background-color: #f6f8fa;
+    /*background-color: #f6f8fa;*/
+    background-color: #282a36;
     border-radius: 3px;
 }
 
