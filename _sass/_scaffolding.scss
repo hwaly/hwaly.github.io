@@ -1,9 +1,4 @@
 /*! scaffolding */
-html {
-    font-size: 10px;
-    font-family: sans-serif;
-}
-
 body,
 button,
 code,
@@ -32,17 +27,8 @@ ul {
     padding: 0;
 }
 
-a {
-    text-decoration: none;
-}
-
 img {
     vertical-align: middle;
-}
-
-ol,
-ul {
-    list-style: none;
 }
 
 address {
@@ -60,11 +46,6 @@ abbr {
 [role=button],
 button {
     cursor: pointer;
-}
-
-html,
-body {
-    min-height: 100%;
 }
 
 fieldset {

@@ -103,15 +103,11 @@ const ModuleA = class {
             case 'B':
                 this.runB(value);
                 break;
-            case 'C':
-                this.runC(value);
-                break;
         }
     }
     
     runA(value) {}
     runB(value) {}
-    runC(value) {}
 };
 
 const ModuleB = class {
