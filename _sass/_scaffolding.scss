@@ -1,0 +1,83 @@
+/*! scaffolding */
+html {
+    font-size: 10px;
+    font-family: sans-serif;
+}
+
+body,
+button,
+code,
+dd,
+dl,
+dt,
+fieldset,
+figure,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+legend,
+li,
+ol,
+p,
+pre,
+table,
+td,
+th,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    vertical-align: middle;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+address {
+    font-style: normal;
+}
+
+hr {
+    display: none;
+}
+
+abbr {
+    cursor: help;
+}
+
+[role=button],
+button {
+    cursor: pointer;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+fieldset {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+legend {
+    border: 0;
+    background: transparent;
+    color: transparent;
+    font: 0/0 a;
+    text-shadow: none;
+}

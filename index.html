@@ -2,10 +2,14 @@
 layout: default
 ---
 
-{% include header.html %}
-
-{% for post in site.posts %}
-<a class="post-link" href="{{ post.url }}">{{ post.title }}</a>
-{% endfor %}
-
-{% include footer.html %}
+<nav>
+    <ul>
+    {% for post in site.posts %}
+        <li>
+            <a class="post-link" href="{{ post.url }}">
+                {{ post.title }}
+            </a>
+        </li>
+    {% endfor %}
+    </ul>
+</nav>

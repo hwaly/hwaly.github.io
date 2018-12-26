@@ -2,12 +2,16 @@
 <html lang="ko">
 {% include head-post.html %}
 <body>
+{% include header.html %}
 
-<section class="post-content">
-    <article class="markdown-body">
-        {{ page.content }}
-    </article>
-</section>
+<div class="site-content">
+    <section class="post-content">
+        <article class="markdown-body">
+            {{ page.content }}
+        </article>
+    </section>
+</div>
 
+{% include footer.html %}
 </body>
 </html>
