@@ -1,23 +1,78 @@
 body {
+    font-weight: 300;
     font-size: 16px;
-    font-family: AppleSDGothicNeo, "Nanum Square", sans-serif;
-    line-height: (20 / 14);
+    font-family: "Noto Sans KR", AppleSDGothicNeo, NanumSquare, NanumGothic, sans-serif;
+    line-height: 1.5;
 }
 
+.site-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    width: 100%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.14);
+    background: #fff;
+    box-shadow: 1px 1px transparent;
+    transition: box-shadow 0.2s ease-in-out;
+
+    &--fixed {
+        box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.06), 0 4px 5px 0 rgba(0, 0, 0, 0.06), 0 1px 10px 0 rgba(0, 0, 0, 0.08);
+    }
+
+    &__container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        box-sizing: border-box;
+        @include clearfix;
+    }
+}
+
+.site-logo {
+    &__link {
+        float: left;
+        color: rgba(0, 0, 0, 0.54);
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 48px;
+        text-decoration: none;
+    }
+}
+
+.site-menu {
+    float: right;
+
+    &__list {
+        list-style: none;
+    }
+
+    &__link {
+        display: inline-block;
+        color: rgba(0, 0, 0, 0.54);
+        line-height: 48px;
+        text-decoration: none;
+    }
+}
 
 .site-footer {
     padding: 32px 0;
+    background: #f2f2f2;
     text-align: center;
 }
 
 .site-content {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 48px 20px 60px;
+    box-sizing: border-box;
 }
 
-.site-copyright {}
+.site-copyright {
+}
 
 .site-powered-by {
+    padding-top: 12px;
     color: #666;
     font-size: 12px;
 

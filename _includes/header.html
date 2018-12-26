@@ -1,14 +1,19 @@
 <header class="site-header">
-    <h1 class="logo">
-        <a href="{{ '/' | prepend: site.baseurl }}">
-            Hwaly
-        </a>
-    </h1>
-    <nav class="nav">
-        <ul>
-            {% for i in site.nav %}
-            <li><a href="{{ i[1] }}">{{ i[0] }}</a></li>
-            {% endfor %}
-        </ul>
-    </nav>
+    <div class="site-header__container">
+        <h1 class="site-logo">
+            <a class="site-logo__link" href="{{ '/' | prepend: site.baseurl }}">
+                {{ site.title }}
+            </a>
+        </h1>
+
+        <nav class="site-menu">
+            <ul class="site-menu__list">
+                {% for menu in site.menu %}
+                <li>
+                    <a class="site-menu__link" href="{{ menu[1] }}">{{ menu[0] }}</a>
+                </li>
+                {% endfor %}
+            </ul>
+        </nav>
+    </div>
 </header>
