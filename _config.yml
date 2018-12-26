@@ -24,7 +24,7 @@ sass:
 paginate: 5
 paginate_path: "page:num"
 
-gems:
+plugins:
   - jekyll-babel
 
 #plugins:

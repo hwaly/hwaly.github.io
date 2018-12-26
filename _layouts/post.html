@@ -5,8 +5,13 @@
 {% include header.html %}
 
 <div class="site-content">
-    <section class="post-content">
-        <article class="markdown-body">
+    <section class="post">
+        <header class="post__header">
+            <h2 class="post__title">Post</h2>
+            <p class="post__date">- {{ page.date | date: '%B %d, %Y' }}</p>
+        </header>
+
+        <article class="post__content markdown-body">
             {{ page.content }}
         </article>
     </section>

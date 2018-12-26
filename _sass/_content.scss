@@ -1,0 +1,25 @@
+.post {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+
+    &__content {
+    }
+
+    &__header {
+        display: inline-block;
+        margin: 40px 0 100px;
+        background: -webkit-linear-gradient(45deg, #13547a, #80d0c7);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    &__title {
+        //padding: 60px 0;
+        //color: #fff;
+        font-weight: 300;
+        font-size: 36px;
+        //text-transform: uppercase;
+    }
+}
