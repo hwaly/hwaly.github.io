@@ -1,0 +1,43 @@
+---
+layout: default
+title: Tags
+description: "태그별 포스트 모음"
+---
+
+<header class="site-content__header">
+    <h2 class="site-content__title">
+        <span class="site-content__point site-content__point--tags">Tags</span>
+    </h2>
+</header>
+
+{% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
+{% assign tag_words = site_tags | split:',' | sort %}
+
+<div class="tags">
+    <ul class="tags__list">
+        {% for tag in tag_words %}
+        <li class="tags__item">
+            <a class="tags__tag" href="#{{ tag | cgi_escape }}">
+                {{ tag }} ({{ site.tags[tag] | size }})
+            </a>
+        </li>
+        {% endfor %}
+    </ul>
+
+    {% for item in (0..site.tags.size) %}{% unless forloop.last %}
+    {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
+    <section class="post-list">
+        <h2 class="tags__title" id="{{ this_word | cgi_escape }}">{{ this_word }}</h2>
+        <ul class="post-list__list">
+            {% for post in site.tags[this_word] %}{% if post.title != null %}
+            <li class="post-list__item">
+                <a class="post-list__link" href="{{ post.url }}">
+                    <h3 class="post-list__title">{{ post.title }}</h3>
+                    <p class="post-list__description">{{ post.description }}</p>
+                </a>
+            </li>
+            {% endif %}{% endfor %}
+        </ul>
+    </section>
+    {% endunless %}{% endfor %}
+</div>

@@ -1,9 +1,11 @@
 ---
 layout: post
 title: "응집도 (Cohesion)"
+description: "모듈내 요소간의 응집도 대하여 알아보자"
 date: 2018-12-25
 author: 연병화
 categories: programing
+tags: [programing, 응집도]
 ---
 
 # 응집도 (Cohesion)

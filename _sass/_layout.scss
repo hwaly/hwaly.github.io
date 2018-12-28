@@ -36,7 +36,6 @@ body {
         font-weight: 300;
         font-size: 18px;
         line-height: 48px;
-        text-decoration: none;
     }
 }
 
@@ -51,7 +50,6 @@ body {
         display: inline-block;
         color: rgba(0, 0, 0, 0.54);
         line-height: 48px;
-        text-decoration: none;
     }
 }
 
@@ -63,6 +61,32 @@ body {
 
 .site-content {
     padding: 48px 0 60px;
+
+    &__header {
+        max-width: 1200px;
+        margin: 40px auto 100px;
+        padding: 0 20px;
+        box-sizing: border-box;
+    }
+
+    &__title {
+        font-weight: 300;
+        font-size: 36px;
+    }
+
+    &__point--post {
+        background: -webkit-linear-gradient(45deg, #fc466b, #3f5efb);
+        color: #fc466b;
+    }
+    &__point--tags {
+        background: -webkit-linear-gradient(45deg, #22c1c3, #fdbb2d);
+        color: #22c1c3;
+    }
+
+    &__point {
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
 }
 
 .site-copyright {
@@ -75,5 +99,6 @@ body {
 
     &__link {
         color: #666;
+        text-decoration: underline;
     }
 }

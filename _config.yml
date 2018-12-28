@@ -11,7 +11,7 @@ nickname: "hwaly"
 
 # 메뉴
 menu:
-  Tags: "#"
+  Tags: "/tags.html"
 
 
 # Build settings
@@ -21,8 +21,8 @@ highlighter: rouge
 sass:
   style: compressed
 
-paginate: 5
-paginate_path: "page:num"
+#paginate: 5
+#paginate_path: "page:num"
 
 plugins:
   - jekyll-babel

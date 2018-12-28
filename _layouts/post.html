@@ -1,22 +1,18 @@
-<!DOCTYPE html>
-<html lang="ko">
-{% include head-post.html %}
-<body>
-{% include header.html %}
+---
+layout: default
+---
 
-<div class="site-content">
-    <section class="post">
-        <header class="post__header">
-            <h2 class="post__title">Post</h2>
-            <p class="post__date">- {{ page.date | date: '%B %d, %Y' }}</p>
-        </header>
+<header class="site-content__header">
+    <h2 class="site-content__title">
+        <span class="site-content__point site-content__point--post">Post</span>
+    </h2>
+    <p class="site-content__date">
+        <span class="site-content__point site-content__point--post">- {{ page.date | date: '%Y. %m. %d' }}</span>
+    </p>
+</header>
 
-        <article class="post__content markdown-body">
-            {{ page.content }}
-        </article>
-    </section>
-</div>
-
-{% include footer.html %}
-</body>
-</html>
+<article class="post">
+    <div class="post__content markdown-body">
+        {{ content }}
+    </div>
+</article>
