@@ -8,7 +8,6 @@ const $on = (target, type, callback, capture) => target.addEventListener(type, c
 const scrollSiteMenu = () => {
     const header = $('.site-header');
     const onScroll = () => {
-        console.log(window.pageYOffset);
         header.classList[window.pageYOffset ? 'add' : 'remove']('site-header--fixed');
     };
 

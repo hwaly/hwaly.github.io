@@ -13,6 +13,25 @@ nickname: "hwaly"
 menu:
   Tags: "/tags.html"
 
+collections:
+  drafts:
+    permalink: /:categories/:year/:month/:day/:title/
+    output: true
+  posts:
+    permalink: /:categories/:year/:month/:day/:title/
+    output: true
+
+defaults:
+- scope:
+    path: _drafts
+    type: drafts
+  values:
+    layout: post
+- scope:
+    path: _posts
+    type: posts
+  values:
+    layout: post
 
 # Build settings
 markdown: kramdown
@@ -25,7 +44,7 @@ sass:
 #paginate_path: "page:num"
 
 plugins:
-  - jekyll-babel
+- jekyll-babel
 
 #plugins:
 #  - jekyll-feed
@@ -34,9 +53,9 @@ plugins:
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
 exclude:
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - package.json
-  - .gitignore
-  - README.md
+- Gemfile
+- Gemfile.lock
+- node_modules
+- package.json
+- .gitignore
+- README.md
