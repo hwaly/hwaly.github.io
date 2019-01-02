@@ -10,8 +10,8 @@ author: "Byeonghwa Yeon"
 nickname: "hwaly"
 
 # 메뉴
-menu:
-  Tags: "/tags.html"
+#menu:
+#  Tags: "/tags.html"
 
 collections:
   drafts:
