@@ -1,15 +1,3 @@
----
-title: "추상 팩토리 (Abstract Factory)"
-description: "모듈내 요소간의 응집도 대하여 알아보자"
-categories: design-patterns
-tags: [design patterns, abstract factory, 디자인 패턴, 추상 팩토리]
----
-
-# 추상 팩토리 (Abstract Factory)
-
-구체적인 클래스를 지정하지 않고 관련성을 갖는 객체들의 집합을 생성하거나 서로 독립적인 객체들의 집합을 생성할 수 있는 인터페이스 제공.
-
-```javascript
 const AbstractFactory = class {
     createProductA() {}
     createProductB() {}
@@ -78,4 +66,3 @@ const ProductB2 = class extends AbstractProductB {
     const factory2 = new ConcreteFactory2();
     const productA2 = factory2.createProductA();
 })();
-```
