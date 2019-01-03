@@ -1,0 +1,18 @@
+---
+layout: default
+---
+
+<header class="site-content__header">
+    <h2 class="site-content__title">
+        <span class="site-content__point site-content__point--posts">{{ page.collection | capitalize }}</span>
+    </h2>
+    <p class="site-content__info">
+        <span class="site-content__point site-content__point--posts">- {{ page.categories | join: ' | ' | replace: "-", " " }} / {{ page.date | date: '%Y. %m. %d' }}</span>
+    </p>
+</header>
+
+<article class="posts">
+    <div class="posts__content markdown-body">
+        {{ content }}
+    </div>
+</article>

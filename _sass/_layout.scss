@@ -29,13 +29,19 @@ body {
     }
 }
 
-.site-logo {
+.site-title {
     &__link {
         float: left;
         color: rgba(0, 0, 0, 0.54);
         font-weight: 300;
         font-size: 18px;
         line-height: 48px;
+        transition: color .3s ease;
+
+        &:hover,
+        &:focus {
+            color: #000;
+        }
     }
 }
 
@@ -74,13 +80,15 @@ body {
         font-size: 36px;
     }
 
-    &__point--post {
-        background: -webkit-linear-gradient(45deg, #fc466b, #3f5efb);
-        color: #fc466b;
+    &__info {
+        text-transform: capitalize;
     }
-    &__point--tags {
-        background: -webkit-linear-gradient(45deg, #22c1c3, #fdbb2d);
-        color: #22c1c3;
+
+    @each $category, $startColor, $endColor in (posts, #fc466b, #3f5efb), (tags, #22c1c3, #fdbb2d) {
+        &__point--#{$category} {
+            background: -webkit-linear-gradient(45deg, $startColor, $endColor);
+            color: $startColor;
+        }
     }
 
     &__point {

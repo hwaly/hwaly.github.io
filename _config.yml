@@ -1,17 +1,20 @@
 # 사이트 정보
-title: "Hwaly's Blog"
-description: "화리 블로그입니다."
-keywords: "화리, hwaly, frontend, javascript, html, css"
-url: "https://hwaly.github.io"
+title: Hwaly's Blog
+author: Byeonghwa Yeon
+nickname: hwaly
+description: 화리 블로그입니다.
+keywords: [화리, 프론트엔드, hwaly, front-end]
+url: https://hwaly.github.io
 baseurl: ""
-github_username: "hwaly"
+github_username: hwaly
+timezone: Asia/Seoul
 
-author: "Byeonghwa Yeon"
-nickname: "hwaly"
+markdown: kramdown
+highlighter: rouge
 
 # 메뉴
 #menu:
-#  Tags: "/tags.html"
+#  Tags: /tags/
 
 collections:
   drafts:
@@ -26,32 +29,19 @@ defaults:
     path: _drafts
     type: drafts
   values:
-    layout: post
+    layout: posts
 - scope:
     path: _posts
     type: posts
   values:
-    layout: post
-
-# Build settings
-markdown: kramdown
-highlighter: rouge
+    layout: posts
 
 sass:
   style: compressed
 
-#paginate: 5
-#paginate_path: "page:num"
-
 plugins:
 - jekyll-babel
 
-#plugins:
-#  - jekyll-feed
-
-# Exclude from processing.
-# The following items will not be processed, by default. Create a custom list
-# to override the default setting.
 exclude:
 - Gemfile
 - Gemfile.lock

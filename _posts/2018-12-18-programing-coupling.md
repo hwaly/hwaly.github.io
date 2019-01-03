@@ -2,9 +2,8 @@
 title: "결합도 (Coupling)"
 description: "모듈간의 결합도에 대하여 알아보자"
 date: 2018-12-18
-author: 연병화
 categories: programing
-tags: [programing, 결합도]
+tags: [programing, Coupling, 결합도]
 ---
 
 # 결합도 (Coupling)

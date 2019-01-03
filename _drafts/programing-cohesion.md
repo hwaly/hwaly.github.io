@@ -1,7 +1,6 @@
 ---
 title: "응집도 (Cohesion)"
 description: "모듈내 요소간의 응집도 대하여 알아보자"
-author: 연병화
 categories: programing
 tags: [programing, 응집도]
 ---
@@ -68,6 +67,7 @@ const Cake = class {
         const bake = this.bake(mix);
     }
 }
+```
 
 ## 교환적 (Communication)
 
