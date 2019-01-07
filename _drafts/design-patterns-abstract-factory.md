@@ -1,6 +1,6 @@
 ---
 title: "추상 팩토리 (Abstract Factory)"
-description: "모듈내 요소간의 응집도 대하여 알아보자"
+description: ""
 categories: design-patterns
 tags: [design patterns, abstract factory, 디자인 패턴, 추상 팩토리]
 ---
