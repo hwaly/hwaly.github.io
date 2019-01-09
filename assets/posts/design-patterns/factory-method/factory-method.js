@@ -1,43 +1,32 @@
-class Productt {
+const Product = class {};
+
+const ConcreteProduct = class extends Product {
     constructor() {
+        super();
+        console.log('ConcreteProduct created');
     }
-}
+};
 
-class ConcreteProduct extends Productt {
-    constructor() {
-        super()
-        console.log('ConcreteProduct created')
-    }
-}
+const Creator = class {
+    factoryMethod() {}
 
-class Creator {
-    constructor() {
-    }
-
-    FactoryMethod (){
-
-    }
-
-    AnOperation (){
-        console.log("AnOperation()");
-        this.product = this.FactoryMethod();
+    anOperation() {
+        console.log('anOperation()');
+        this.product = this.factoryMethod();
         console.log(this.product instanceof ConcreteProduct);
     }
-}
+};
 
-class ConcreteCreator extends Creator {
-
+const ConcreteCreator = class extends Creator {
     constructor() {
         super();
         console.log('ConcreteCreator created');
     }
 
-    FactoryMethod (){
+    factoryMethod() {
         return new ConcreteProduct();
     }
-}
+};
 
-function init_FactoryMethod() {
-    const factory = new ConcreteCreator();
-    factory.AnOperation()
-}
+const factory = new ConcreteCreator();
+factory.anOperation();

@@ -46,6 +46,18 @@ const SimplePizzaFactory = class {
     }
 };
 
+const NYPizzaFactory = class {
+
+};
+
+const ChicagoPizzaFactory = class {
+
+};
+
+const CaliforniaPizzaFactory = class {
+
+};
+
 const PizzaStore = class {
     constructor() {
         this.factory = SimplePizzaFactory;
