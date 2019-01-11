@@ -1,4 +1,6 @@
-const WeatherData = class {
+import Subject from './Subject.js';
+
+const WeatherData = class extends Subject {
     getTemperature() {}
     getHumidity() {}
     getPressure() {}
@@ -12,4 +14,6 @@ const WeatherData = class {
         forecastDisplay.update(temperature, humidity, pressure);
     }
 };
+
+export default WeatherData;
 
