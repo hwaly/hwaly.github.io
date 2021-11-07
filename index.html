@@ -1,15 +1,239 @@
----
-layout: default
----
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<nav hidden>
-    <ul>
-    {% for post in site.posts %}
-        <li>
-            <a class="post-link" href="{{ post.url }}">
-                {{ post.title }}
-            </a>
-        </li>
-    {% endfor %}
-    </ul>
-</nav>
+        html,
+        body,
+        .qna {
+            height: 100%;
+        }
+
+        .qna {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 20px;
+            font-size: 16px;
+            font-family: sans-serif;
+            line-height: 1.5;
+        }
+
+        .q {
+            padding-bottom: 20px;
+            text-align: center;
+        }
+
+        .q p:nth-child(1) {
+            padding-bottom: 10px;
+            color: #999;
+            font-size: 12px;
+        }
+
+        .q p:nth-child(2) {
+            font-size: 18px;
+            font-weight: 500;
+        }
+
+        .w {
+            width: 100%;
+            padding: 20px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            background: #fafafa;
+            color: darkred;
+            appearance: none;
+            text-align: center;
+        }
+
+        .a {
+            position: relative;
+            padding: 20px;
+        }
+
+        .a button {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+            background: #fff;
+            appearance: none;
+        }
+
+        .a .hide {
+            opacity: 0;
+            transition: opacity .4s ease;
+        }
+
+        .next {
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .next button {
+            width: 100px;
+            height: 40px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            appearance: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="qna">
+    <div class="q">
+        <p>1/4</p>
+        <p>문제 1</p>
+    </div>
+
+    <textarea class="w" cols="30" rows="3" placeholder="정답 입력"></textarea>
+    <div class="a">
+        <p>정답</p>
+        <button type="button">정답 보기</button>
+    </div>
+    <div class="next">
+        <button type="button">다음 문제</button>
+    </div>
+</div>
+
+<script>
+    const qna = [
+        {
+            q: '바리스타의 영역은 어디까지인가요?',
+            a: '커피, 와인, 칵테일 등 바에서 행해지는 모든 업무를 말합니다.'
+        },
+        {
+            q: '자격시험에서 카페 에스프레소와 카페 카푸치노만 평가하는 이유는?',
+            a: '커피메뉴의 기본이 에스프레소이고, 베리에이션 메뉴의 기본이 카푸치노이기 때문입니다.'
+        },
+        {
+            q: '커피 블렌딩을 하는 목적은 무엇이라고 생각합니까?',
+            a: '아라비카종의 신맛과 로부스타종의 쓴맛의 균형잡힌 맛을 위해서입니다.'
+        },
+        {
+            q: '커피 그라인더가 커피맛에 영향을 주는 원인은?',
+            a: '분쇄 입자조절에 따른 맛의 변화입니다.'
+        },
+        {
+            q: '커피 그라인더 칼날의 수명은?',
+            a: '원두 사용량에 따라 다르지만, 하루 2~3kg의 커피를 사용하면 6~7개월 정도 됩니다.'
+        },
+        {
+            q: '커피 분쇄 굵기에 따라서 맛은 어떻게 변하는가?',
+            a: '굵기가 굵을수록 가벼운맛이 나고, 얇을수록 쓴맛과 떫은맛이 납니다.'
+        },
+        {
+            q: '탬핑을 꼭 하는 이유는?',
+            a: '분쇄가루의 공기압축과 수평을 통해 고른 맛과 고른 추출이 가능하기 때문입니다.'
+        },
+        {
+            q: '커피 담기에서 추출까지의 시간이 짧을수록 좋다고 하는데 그 이유는?',
+            a: '분쇄커피는 물과 공기가 접촉되는 순간부터 산화되기 시작해서 맛과 향이 사라지기 때문입니다.'
+        },
+        {
+            q: '커피추출하는 과정 중에 가장 중요하다고 생각하는 부분은 무엇인가?',
+            a: '신속 정확한 동작과 청결입니다.'
+        },
+        {
+            q: '현재 사용하고있는 커피의 적정 추출 수 온도는?',
+            a: '90에서 95입니다.'
+        },
+        {
+            q: '추출 수 온도 유지를 위하여 어떤 행위를 하셨는지요?',
+            a: '그룹헤드를 번갈아가며 추출하였습니다.'
+        },
+        {
+            q: '에스프레소 커피의 크레마는 무엇이며, 가장 적정한 색깔은?',
+            a: '에스프레소 추출시 고온과 고압에 의해 커피의 식물성 지방등이 밀려나오는 것으로, 붉은빛을 띠는 황금색이 좋습니다.'
+        },
+        {
+            q: '에스프레소 커피를 한마디로 정의한다면?',
+            a: '빠른 시간에 추출된 커피로 신맛과 쓴맛의 조화를 이루는 커피를 말합니다.'
+        },
+        {
+            q: '에스프레소 커피추출에 미치는 영향을 3가지 이상 말하시오.',
+            a: '원두 담는 양, 커피 분쇄도, 탬핑의 강도 등입니다.'
+        },
+        {
+            q: '추출시간에 따른 에스프레소 커피 맛의 변화는?',
+            a: '시간이 짧을수록 신맛이 강하며, 길어질수록 쓴맛이 납니다.'
+        },
+        {
+            q: '카푸치노 커피를 한마디로 표현한다면?',
+            a: '에스프레소의 쓴맛과, 우유의 고소함, 거품의 부드러움이 조화를 느낄 수 있는 커피를 말합니다.'
+        },
+        {
+            q: '카푸치노 커피 조리시 우유의 적정 온도와 이유는?',
+            a: '60~70 사이 이며, 단백질 파괴방지와 밀도조절을 위해서입니다.'
+        },
+        {
+            q: '커피 음료를 빠르게 서비스 하는 이유는?',
+            a: '적정온도 유지와 풍부한 향미를 느낄 수 있게 하기 위해서입니다.'
+        },
+        {
+            q: '커피기계의 연수기와 정수기를 설치하는 이유는?',
+            a: '머신의 유지관리와 깨끗한 물을 이용한 추출을 위해서입니다.'
+        },
+        {
+            q: '커피기계에 설치되어 있는 정수기 필터의 수명은?',
+            a: '사용하는 환경에 따라 다르지만 필터의 수명은 대략 3개월 정도입니다.'
+        }
+    ];
+
+    const list = [...qna];
+
+    const reset = () => {
+        list.forEach((item, index, array) => {
+            const random = Math.floor(Math.random() * (index + 1));
+            [array[index], array[random]] = [array[random], array[index]]
+        });
+    };
+
+    let current = 0;
+    const questionIndex = document.querySelector('.q p:nth-child(1)');
+    const question = document.querySelector('.q p:nth-child(2)');
+    const answer = document.querySelector('.a p');
+    const answerButton = document.querySelector('.a button');
+    const write = document.querySelector('.w');
+    const next = document.querySelector('.next button');
+
+    const make = () => {
+        write.value = '';
+        write.focus();
+        answerButton.classList.remove('hide');
+        questionIndex.innerHTML = `${current + 1} / ${list.length}`;
+        question.innerHTML = list[current].q;
+        answer.innerHTML = list[current].a;
+        current++;
+    };
+
+    answerButton.addEventListener('click', () => {
+        answerButton.classList.add('hide');
+    });
+
+    next.addEventListener('click', () => {
+        if (current >= list.length) {
+            return;
+        }
+
+        make();
+    });
+
+    reset();
+    make();
+</script>
+</body>
+</html>
